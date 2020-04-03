@@ -1,6 +1,6 @@
 import React, { useCallback, useState, ChangeEvent, KeyboardEvent } from 'react'
 import styled from '@emotion/styled'
-// import Input from '../atoms/Input'
+import Input from '../atoms/Input'
 import Button from '../atoms/Button'
 
 // TODO: DRY
@@ -44,7 +44,7 @@ const AddTodo: React.FC<Props> = ({ onAdd }) => {
 
   return (
     <Wrapper>
-      <input value={title} onChange={handleChangeInput} onKeyDown={handleEnter} />
+      <Input value={title} onChange={handleChangeInput} onKeyDown={handleEnter} />
       <Button onClick={handleAdd} disabled={!title.length}>
         +
       </Button>

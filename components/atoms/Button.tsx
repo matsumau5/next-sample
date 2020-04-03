@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React, { ButtonHTMLAttributes } from 'react'
-import { css } from '@emotion/core'
-import styled from '@emotion/styled'
+import './button.scss'
+// import { css } from '@emotion/core'
+// import styled from '@emotion/styled'
 
 type ButtonType = null | 'danger'
 
@@ -14,48 +16,68 @@ type WrapperProps = {
 
 type Props = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'> & OwnProps
 
-const StyledButton = styled('button')<WrapperProps>`
-  appearance: none;
-  border: 1px solid #89d2dd;
-  background: #f4fbfc;
-  color: #00a6bc;
-  border-radius: 5px;
-  transition: all linear 0.2s;
-  cursor: pointer;
-  font-size: 1.06rem;
-  padding: 0.8rem;
+const TodoButton = (props: WrapperProps) => {
+  return <button className="todo-button" {...props} />
+}
 
-  :hover {
-    background: #00a6bc;
-    color: #f4fbfc;
-  }
+// const StyledButton = styled('button')<WrapperProps>`
+// const StyledButton = styled(TodoButton)<WrapperProps>`
+//   appearance: none;
+//   border: 1px solid #89d2dd;
+//   background: #f4fbfc;
+//   color: #00a6bc;
+//   border-radius: 5px;
+//   transition: all linear 0.2s;
+//   cursor: pointer;
+//   font-size: 1.06rem;
+//   padding: 0.8rem;
 
-  :focus {
-    outline: none;
-  }
+//   :hover {
+//     background: #00a6bc;
+//     color: #f4fbfc;
+//   }
 
-  :disabled {
-    border-color: #b3b3b3;
-    background: #f7f7f7;
-    color: #b3b3b3;
-  }
+//   :focus {
+//     outline: none;
+//   }
 
-  ${({ buttonType }) =>
-    buttonType === 'danger' &&
-    css`
-      color: #bc0000;
-      border-color: #dd8989;
-      background: #fcf4f4;
+//   :disabled {
+//     border-color: #b3b3b3;
+//     background: #f7f7f7;
+//     color: #b3b3b3;
+//   }
 
-      :hover {
-        background: #bc0000;
-        color: #fcf4f4;
-      }
-    `}
-`
+//   ${({ buttonType }) =>
+//     buttonType === 'danger' &&
+//     css`
+//       color: #bc0000;
+//       border-color: #dd8989;
+//       background: #fcf4f4;
+
+//       :hover {
+//         background: #bc0000;
+//         color: #fcf4f4;
+//       }
+//     `}
+// `
+// const StyledButton = (props: WrapperProps) => {
+//   `${({ buttonType }) =>
+//   buttonType === 'danger' &&
+//   css`
+//     color: #bc0000;
+//     border-color: #dd8989;
+//     background: #fcf4f4;
+
+//     :hover {
+//       background: #bc0000;
+//       color: #fcf4f4;
+//     }
+//   `
+//   return <button className="todo-button" value="" {...props} />
+// }
 
 const Button: React.FC<Props> = ({ type, ...rest }) => {
-  return <StyledButton {...rest} buttonType={type} />
+  return <TodoButton {...rest} buttonType={type} />
 }
 
 export default Button

@@ -1,4 +1,4 @@
-button {
+@mixin todoButton($type) {
   appearance: none;
   border: 1px solid #89d2dd;
   background: #f4fbfc;
@@ -8,17 +8,20 @@ button {
   cursor: pointer;
   font-size: 1.06rem;
   padding: 0.8rem;
+  &:hover {
+    background: #00a6bc;
+    color: #f4fbfc;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:disabled {
+    border-color: #b3b3b3;
+    background: #f7f7f7;
+    color: #b3b3b3;
+  }
 }
 
-:hover {
-  background: #00a6bc;
-  color: #f4fbfc;
-}
-:focus {
-  outline: none;
-}
-:disabled {
-  border-color: #b3b3b3;
-  background: #f7f7f7;
-  color: #b3b3b3;
+.todo-button {
+  @include todoButton('');
 }
