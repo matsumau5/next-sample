@@ -3,6 +3,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "develop": "next build && start",
     "storybook": "start-storybook -p 6006"
   },
   "dependencies": {

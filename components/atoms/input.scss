@@ -6,7 +6,11 @@ input {
   border: 1px solid #d4dadc;
   padding: 4px 6px;
 }
-:hover {
+a:hover {
   border: 1px solid #89d2dd;
   background: #f4fbfc;
+}
+
+a:focus {
+  outline: none;
 }
