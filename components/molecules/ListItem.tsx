@@ -1,34 +1,25 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import List from '../atoms/List'
+/* eslint-disable react/jsx-no-undef */
+import React, { HTMLAttributes } from 'react'
+// import styled from '@emotion/styled'
+// import List from '../atoms/List'
+import css from './listitem.scss'
+import Item from '../atoms/List/Item'
 
-type Props = {
-  title: string
+type Props = Omit<HTMLAttributes<HTMLDListElement>, 'type'> & {
+  title?: string
   action?: React.ReactNode
 }
 
-const StyledItem = styled(List.Item)`
-  display: flex;
-  align-items: center;
-  padding: 0.5rem;
-
-  :hover {
-    background: #f4fbfc;
-  }
-`
-
-const Content = styled.div`
-  flex: 1;
-`
-
-const Action = styled.div``
+const TodoItem: React.FC<Props> = (props: Props) => {
+  return <Item {...props} />
+}
 
 const ListItem: React.FC<Props> = ({ title, action, ...rest }) => {
   return (
-    <StyledItem {...rest}>
-      <Content>{title}</Content>
-      {action && <Action>{action}</Action>}
-    </StyledItem>
+    <TodoItem {...rest}>
+      <div className={css.content}>{title}</div>
+      {action && <div>{action}</div>}
+    </TodoItem>
   )
 }
 

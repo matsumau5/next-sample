@@ -1,12 +1,8 @@
-import styled from '@emotion/styled'
+import React from 'react'
+import css from './item.scss'
 
-const Item = styled.li`
-  border-top: solid 1px #ddd;
-  border-bottom: solid 1px #ddd;
-
-  & + & {
-    border-top-width: 0;
-  }
-`
+const Item: React.FC = (props) => {
+  return <li className={css.todoItem} {...props} />
+}
 
 export default Item

@@ -1,8 +1,5 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React, { ButtonHTMLAttributes } from 'react'
-import './button.scss'
-// import { css } from '@emotion/core'
-// import styled from '@emotion/styled'
+import styles from './button.scss'
 
 type ButtonType = null | 'danger'
 
@@ -16,8 +13,8 @@ type WrapperProps = {
 
 type Props = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'> & OwnProps
 
-const TodoButton = (props: WrapperProps) => {
-  return <button className="todo-button" {...props} />
+const TodoButton: React.FC<WrapperProps> = (props: WrapperProps) => {
+  return <button className={styles.todoButton} {...props} />
 }
 
 // const StyledButton = styled('button')<WrapperProps>`

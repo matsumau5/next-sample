@@ -1,9 +1,13 @@
-div {
+.todoListItem {
   display: flex;
   align-items: center;
   padding: 0.5rem;
+  flex: 1;
+  &:hover {
+    background: #f4fbfc;
+  }
 }
 
-:hover {
-  background: #f4fbfc;
+.content {
+  flex: 1;
 }
