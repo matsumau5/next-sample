@@ -1,5 +1,4 @@
 import React, { AnchorHTMLAttributes } from 'react'
-// import styled from '@emotion/styled'
 import { LinkProps } from 'next/link'
 import css from './link.scss'
 

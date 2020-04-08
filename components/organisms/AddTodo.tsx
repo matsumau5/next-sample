@@ -1,5 +1,5 @@
 import React, { useCallback, useState, ChangeEvent, KeyboardEvent } from 'react'
-import styled from '@emotion/styled'
+import css from './addTodo.scss'
 import Input from '../atoms/Input'
 import Button from '../atoms/Button'
 
@@ -11,15 +11,6 @@ type Todo = {
 type Props = {
   onAdd: (todo: Todo) => void
 }
-
-// const StyledInput = styled(Input)`
-//   flex: 1;
-//   margin-right: 1rem;
-// `
-
-const Wrapper = styled.div`
-  display: flex;
-`
 
 const AddTodo: React.FC<Props> = ({ onAdd }) => {
   const [title, setTitle] = useState('')
@@ -43,12 +34,12 @@ const AddTodo: React.FC<Props> = ({ onAdd }) => {
   }, [])
 
   return (
-    <Wrapper>
+    <div className={css.wrapper}>
       <Input value={title} onChange={handleChangeInput} onKeyDown={handleEnter} />
       <Button onClick={handleAdd} disabled={!title.length}>
         +
       </Button>
-    </Wrapper>
+    </div>
   )
 }
 
