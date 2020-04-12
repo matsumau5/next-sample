@@ -1,7 +1,7 @@
 import React, { useCallback, useState, ChangeEvent, KeyboardEvent } from 'react'
 import css from './addTodo.scss'
-import Input from '../atoms/Input'
-import Button from '../atoms/Button'
+import Input from '../../atoms/Input'
+import Button from '../../atoms/Button'
 
 // TODO: DRY
 type Todo = {

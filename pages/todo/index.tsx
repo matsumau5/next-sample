@@ -1,18 +1,9 @@
 import React, { useState, useCallback } from 'react'
-import AddTodo from '../../components/organisms/AddTodo'
+import AddTodo from '../../components/organisms/TodoList/AddTodo'
 import TodoItems from '../../components/organisms/TodoList'
+import Header from '../../components/organisms/header/Header'
 
 type Todo = { id: string; title: string }
-
-// const Content = styled.div`
-//   width: 80%;
-//   max-width: 640px;
-//   margin: 2rem auto;
-// `
-
-// const StyledTodos = styled(TodoItems)`
-//   margin-top: 2rem;
-// `
 
 const Home: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([])
@@ -33,7 +24,8 @@ const Home: React.FC = () => {
 
   return (
     <div>
-      <h1>Todo ({todos.length})</h1>
+      <Header />
+      <h2>Todo ({todos.length})</h2>
       <AddTodo onAdd={handleAdd} />
       <TodoItems todos={todos} onDelete={handleDelete} />
     </div>
